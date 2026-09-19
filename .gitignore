@@ -1,0 +1,12 @@
+.idea/
+logs/
+scratch/
+.system_generated/
+*.tmp
+.last_sync
+*.zip
+*.rar
+*.7z
+spelling_scan_report.txt
+*.vbs
+

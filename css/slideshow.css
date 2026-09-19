@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Racing+Sans+One|Roboto');
+
+@function randomVal() {
+  @return random(256) - 1;
+}
+
+@mixin randomRGBA() {
+  background-color: rgba(randomVal(), randomVal(), randomVal(), .25);
+}
+
+body {
+  height: 100%;
+}
+
+.slide {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1s;
+ 
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  
+  &.visible {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+$slides: 6;
+@while $slides>=0 {
+  .slide[data-slide="slide-#{$slides}"] {
+    @include randomRGBA();
+  }
+  $slides: $slides - 1;
+}
+
+.slide-image {
+  flex: 0 1 50%;
+
+  img {
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+  
+    @media (min-width: 768px) {
+      height: 100vh;
+    }
+  }
+}
+
+.slide-caption {
+  flex: 0 1 50%;
+  display: flex;
+  background-color: inherit;
+}
+
+.slide-caption-content {
+  margin: auto;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1;
+  font-size: calc(14px + (19 - 14) * (100vw - 426px) / (768 - 426));
+  background-color: inherit;
+  padding: 0 .5em;
+  
+  @media(min-width: 768px) {
+    width: 90%;
+    line-height: 1.5;
+    font-size: 1.25rem;
+  }
+  
+  p {
+    padding: 0 1em;
+  }
+}
+
+.title-bg {
+  background-color: inherit;
+  padding: 0 .75em;
+
+  h1 {
+    font-family: 'Racing Sans One', serif;
+    font-size: calc(28px + (44 - 28) * (100vw - 426px) / (768 - 426));
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 5px 0;
+    
+    @media(max-width: 425px) {
+      margin: 0;
+    }
+    
+    @media(min-width: 768px) {
+      font-size: 2.8125rem;
+    }
+    
+  }
+}
