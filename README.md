@@ -64,13 +64,5 @@
 
 ---
 
-## 🛠️ HƯỚNG DẪN CÀI ĐẶT CỤC BỘ (LOCALHOST)
-1. Cài đặt **XAMPP** (hỗ trợ PHP 8.x và MariaDB).
-2. Sao chép toàn bộ thư mục mã nguồn vào đường dẫn: `C:\xampp\htdocs\qlbanhoa`.
-3. Mở **XAMPP Control Panel**, nhấn **Start** cả 2 dịch vụ **Apache** và **MySQL**.
-4. Truy cập trình duyệt theo địa chỉ: `http://localhost/phpmyadmin/`. Tạo cơ sở dữ liệu tên: `qlbanhoa`.
-5. Nhấn tab **Import**, chọn file `qlbanhoa.sql` trong thư mục gốc và nhấn **Import**.
-6. Mở trình duyệt và trải nghiệm website tại: `http://localhost/qlbanhoa/`.
-
 ---
 *© 2026 Sen Garden Team - Trường Đại học Nguyễn Tất Thành.*
