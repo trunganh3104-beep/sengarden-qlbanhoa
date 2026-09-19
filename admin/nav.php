@@ -301,7 +301,7 @@ $adminDisplayName = !empty($adminUser['HoTen']) ? $adminUser['HoTen'] : (!empty(
             <a href="quanlyuser.php" class="admin-nav-item <?php echo ($currentPage === 'quanlyuser.php') ? 'active' : ''; ?>">
                 <i class="fa-solid fa-users"></i> <span>Khách hàng</span>
             </a>
-            <a href="quanlychat.php" class="admin-nav-item chat-btn <?php echo ($currentPage === 'quanlychat.php') ? 'active' : ''; ?>">
+            <a href="cskh.php" class="admin-nav-item chat-btn <?php echo ($currentPage === 'cskh.php' || $currentPage === 'quanlychat.php') ? 'active' : ''; ?>">
                 <i class="fa-solid fa-comments"></i> <span>CSKH</span>
             </a>
         </div>

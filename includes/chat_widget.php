@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function loadMessages() {
-        fetch('ajax_chat.php?action=get_messages')
+        fetch('ajax_cskh.php?action=get_messages')
             .then(res => res.json())
             .then(data => {
                 if (data && data.length > 0) {
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const formData = new FormData();
         formData.append('noi_dung', text);
 
-        fetch('ajax_chat.php?action=send_message', {
+        fetch('ajax_cskh.php?action=send_message', {
             method: 'POST',
             body: formData
         })

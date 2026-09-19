@@ -16,8 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnGoiTin'], $_POST['
     if (!empty($noiDungAdmin) && $khID > 0) {
         $ndEsc = mysqli_real_escape_string($conn, $noiDungAdmin);
         mysqli_query($conn, "INSERT INTO qlchat (MaKH, NguoiGui, NoiDung) VALUES ($khID, 'admin', '$ndEsc')");
-        header("Location: quanlychat.php?makh=$khID");
-        echo "<script>window.location.href='quanlychat.php?makh=$khID';</script>";
+        header("Location: cskh.php?makh=$khID");
+        echo "<script>window.location.href='cskh.php?makh=$khID';</script>";
         exit;
     }
 }
@@ -77,7 +77,7 @@ include_once 'nav.php';
                         $displayName = $kh['HoTen'] ?: $kh['TenDN'];
                         $firstChar = mb_substr($displayName, 0, 1, 'UTF-8');
                     ?>
-                        <a href="quanlychat.php?makh=<?php echo $kh['MaKH']; ?>" 
+                        <a href="cskh.php?makh=<?php echo $kh['MaKH']; ?>" 
                            class="customer-chat-item" 
                            data-name="<?php echo htmlspecialchars(mb_strtolower($displayName)); ?>"
                            data-phone="<?php echo htmlspecialchars($kh['DienThoai'] ?? ''); ?>"
